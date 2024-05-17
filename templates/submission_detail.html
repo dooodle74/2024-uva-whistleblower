@@ -1,0 +1,268 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+
+{% block title %}
+Report Details
+{% endblock %}
+
+{% block content %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+    .page-wrap {
+        min-height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+    }
+    .content-wrap {
+        flex: 1;
+    }
+    .footer {
+        height: 60px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #232D4B;;
+        text-align: center;
+        padding: 10px 0;
+        color: #FFFFFF;
+    }
+        .info-box {
+        background: #ffffff;
+        border-color: #f9f9f9;
+        border-style: solid;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: #2a3860;
+    }
+        .wrapper{
+        display: grid;
+        background: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        grid-template-columns: 1fr 1fr;
+        color: #2a3860;
+        }
+        .wrapper2{
+        display: grid;
+        background: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        grid-template-columns: 2fr;
+        color: #232D4B;
+        }
+        .wrapper3{
+        display: grid;
+        background: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: #232D4B;
+        }
+        .info-header {
+        font-size: 16px;
+        font-weight: bold;
+        
+        margin-bottom: 5px;
+        color: #232D4B;
+    }
+    .full-span {
+        grid-column: 1 / -1;
+        background: #ffffff;
+        border-color: #f9f9f9;
+        border-style: solid;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: #232D4B;
+    }
+    .full-span-text {
+        grid-column: 1 / -1;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: #232D4B;
+    }
+    .btn.btn-success.custom-hover:hover {
+        background-color: #2a3860;
+    }
+    .btn.btn-primary.custom-hover:hover {
+        background-color: #2a3860;
+    }
+
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 75%; /* Change this percentage based on your desired aspect ratio */
+    }
+  .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+  }
+</style>
+<body>
+    <div class="page-wrap">
+        <div class="content-wrap">
+            <div class="container mt-4">
+                <h2>Submission Details</h2>
+                <div class="wrapper">
+                <div class="full-span-text">
+                {% if admin %}
+                    {% if submission.user.get_username != "anonymous" %}
+                    <div class="info-header">Submission by {{ submission.user.get_username }}  <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        <i class="bi bi-envelope" title="Email"></i>
+                      </a></div>
+                        {%  else %}
+                        <div class="info-header">Submission anonymously submitted</div>
+                     {% endif %}
+                {% endif %}
+                </div>
+                <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="contactModalLabel">Contact Student</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Email: <a href="mailto:{{ submission.user.email }}">{{ submission.user.email }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    {% if submission.incident_type %}
+                    <div class="info-box">
+                    <div class="info-header">Incident Type</div>
+                        {% for incident in submission.get_readable_incident_type %}
+                        {{ incident }}
+                        {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if submission.organizations_involved %}
+                        <div class="info-box">
+                        <div class="info-header">Organizations Involved</div>
+                        <p>{{ submission.get_organizations_involved_display }}</p>
+                    </div>
+                    {% endif %}
+                    {% if submission.who_was_involved %}
+                        <div class="info-box">
+                        <div class="info-header">Who Was Involved</div>
+                            <p>{{ submission.who_was_involved }}</p>
+                        </div>
+                    {% endif %}
+                    {% if submission.injuries %}
+                        <div class="info-box">
+                             <div class="info-header">Injuries/Damages Inflicted</div>
+                            <p> {{ submission.injuries }}</p>
+                        </div>
+                    {% endif %}
+                    {% if submission.date_and_time %}
+                        <div class="info-box">
+                        <div class="info-header">Date and Time</div>
+                            <p>{{ submission.date_and_time }}</p>
+                        </div>
+                    {% endif %}
+                    {% if submission.additional_info %}
+                       <div class="full-span">
+                        <div class="info-header">Additional Information</div>
+                            <p> {{ submission.additional_info }}</p>
+                        </div>
+                    {% endif %}
+                {% if submission.file %}
+                    <div class="full-span">
+                    <div class="card-header" id="fileCollapseHeading">
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#fileCollapse" aria-expanded="true" aria-controls="fileCollapse">
+                         {{ file_name }}
+                        </button>
+                    </div>
+                    <div id="fileCollapse" class="collapse" aria-labelledby="fileCollapseHeading">
+                        <div class="card-body">
+                            <div class="iframe-container">
+                                <iframe src="{{ file_url }}" width="100%" height="500"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                {% endif %}
+                </div>
+                {% if admin %}
+                <div class = "wrapper">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="submission_id" value="{{ submission.id }}">
+                    <!-- Status dropdown with preloaded value -->
+                    <p>Status:
+                        <select name="status">
+                        <option value="In Progress" {% if status == "In Progress" %} selected {% endif %}>In Progress</option>
+                        <option value="Resolved" {% if status == "Resolved" %} selected {% endif %}>Resolved</option>
+                        </select>
+                    </p>
+                <p >Publicity Status:
+                        <select name="public">
+                        <option value="true" {% if public %} selected {% endif %}>Public</option>
+                        <option value="false" {% if not public %} selected {% endif %}>Private</option>
+                        </select>
+                    </p>
+                    <!-- Comment input field with preloaded value -->
+                    <p>Comment:  <textarea class="form-control" rows="5" id="comment" type="text" name="comment">{{ comment }}</textarea></p>
+
+
+                    <button type="submit" class="btn btn-success custom-hover" style="background-color: #232D4B; border: #232D4B; color: white; ">Submit Changes</button>
+                <a href="{{ request.session.last_page }}" class="btn btn-primary custom-hover" style="background-color: #232D4B; border: #232D4B; color: white; ">Back to Submissions</a>
+                </form>
+                </div>
+                {% else %}
+                    <div class = "wrapper2">
+                    <p><strong>Status:</strong> {{ status }}</p>
+                    {% if comment %}
+                        <p><strong>Comment:</strong> {{ comment }}</p>
+                    {% endif %}
+                    {% if is_user %}
+                     <div>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete This Submission</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    Are you sure you want to delete this submission? This action cannot be undone.
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                      <form action="{% url 'delete-submission' submission.id %}" method="post">
+                                          {% csrf_token %}
+                                          <button type="submit" class="btn btn-danger">Delete</button>
+                                      </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <a href="{% url 'print_submission' submission.id %}" class="btn btn-info">Print as PDF</a>
+                    {% endif %}
+                    <div style="padding-top: 10px">
+                    <a href="{{ request.session.last_page }}" class="btn btn-primary custom-hover" style="background-color: #232D4B; border: #232D4B; color: white; ">Back to Submissions</a>
+                    </div>
+                     </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="footer">
+            <p>Class project. This system is not monitored, and no real information should be submitted.</p>
+        </div>
+    </div>
+</body>
+{% endblock %}

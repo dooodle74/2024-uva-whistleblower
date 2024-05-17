@@ -1,0 +1,116 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+Report List
+{% endblock %}
+
+{% block content %}
+<style>
+    .page-wrap {
+        min-height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+    }
+    .content-wrap {
+        flex: 1;
+    }
+    .footer {
+        height: 60px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #232D4B;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 30px;
+    }
+    .center-text {
+    text-align: center;
+    }
+    .btn{
+      background-color: #232D4B;
+      color: white;
+      border: #2a3860;
+      
+    }
+    .btn:hover {
+      background-color: #2a3860;
+    }
+</style>
+<body>
+   <div class="page-wrap">
+        <div class="content-wrap">
+            <div class="container mt-4">
+                <h1>List of Submissions</h1>
+                 <!-- Filter Form -->
+             <form method="get" class="mb-4">
+                <div class="row">
+                  <div class="col">
+                    <select class="form-select" name="status">
+                      <option value="" {% if request.GET.status == 'All' %}selected{% endif %}>All Statuses</option>
+                      <option value="New" {% if request.GET.status == 'New' %}selected{% endif %}>New</option>
+                      <option value="In Progress" {% if request.GET.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                      <option value="Resolved" {% if request.GET.status == 'Resolved' %}selected{% endif %}>Resolved</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                  </div>
+                </div>
+              </form>
+
+            {% if submissions %}
+       <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Incident Type</th>
+            <th>Date Uploaded</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for submission in submissions %}
+          <tr>
+            <td>{{ submission.user.get_username }}</td>
+            <td>{{ submission.status }}</td>
+            <td>{% for incident in submission.get_readable_incident_type %}
+                    {{ incident }}
+                    {% if not forloop.last %}, {% endif %}
+                    {% endfor %}</td>
+            <td>{{ submission.upload_time }}</td>
+          <td><a href="{% url 'view-submission' submission.id %}" class="btn btn-primary"  style="width: 100%;">View Submission</a></td>
+
+          </tr>
+                {% endfor %}
+          {% else %}
+
+            <p>{% if request.GET.status == 'Resolved' %}No resolved submissions exist.{% endif %}</p>
+            <p>{% if request.GET.status == 'In Progress' %}No in progress submissions exist.{% endif %}</p>
+            <p>{% if request.GET.status == 'New' %}No new submissions exist.{% endif %}</p>
+            <p>{% if current_status == "All" %}No submissions exist.{% endif %}</p>
+                <form action="{% url 'file_upload' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-secondary">Make New Submission</button>
+            </form>
+
+
+        {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+        <div class="footer">
+            <p>Class project. This system is not monitored, and no real information should be submitted.</p>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+File List
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>List of Files</title>
+        <style>
+            .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f4f4f4;
+            color: #666;
+            text-align: center;
+            padding: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <h1>List of Uploaded Files</h1>
+            <div class="row">
+                {% for file_url, name, user_name in file_urls %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ name }}</h5>
+                            <p class="card-text">Uploaded by: {{ user_name }}</p>
+                            <a href="{{ file_url }}" class="btn btn-primary">Download</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No files have been uploaded yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+    <div class="footer">
+        <p>Class project. This system is not monitored, and no real information should be submitted.</p>
+    </div>
+    {% endblock %}

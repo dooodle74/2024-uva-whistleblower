@@ -1,0 +1,146 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+Resources
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>List of Files</title>
+        <style>
+            .page-wrap {
+                min-height: calc(100vh - 60px);
+                display: flex;
+                flex-direction: column;
+            }
+            .content-wrap {
+                flex: 1;
+            }
+            .footer {
+                height: 60px;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #232D4B;
+                color: #FFFFFF;
+                text-align: center;
+                padding: 10px 0;
+                margin-top: 30px;
+            }
+            h2, h5 {
+                margin-top: 20px;
+                color: #232D4B;
+            }
+            h6 {
+                color: #232D4B;
+            }
+            p {
+                line-height: 1.6;
+                color: #232D4B;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-wrap">
+            <div class="content-wrap">
+                <div class="container mt-4">
+                    <ul class="nav nav-tabs" id="resourceTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="misconduct-tab" data-bs-toggle="tab" href="#misconduct" role="tab" aria-controls="misconduct" aria-selected="true" style="color: #232D4B;">Types of Misconduct</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="policies-tab" data-bs-toggle="tab" href="#policies" role="tab" aria-controls="laws" aria-selected="false " style="color: #232D4B;">UVA Policies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="help-tab" data-bs-toggle="tab" href="#help" role="tab" aria-controls="help" aria-selected="false" style="color: #232D4B;">Resources for Help</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="misconduct" role="tabpanel" aria-labelledby="misconduct-tab">
+                            <h2>Types of Misconduct</h2>
+                            <p>Misconduct can appear in many different forms. Some common definitions are listed below; however, this is not a comprehensive list. If you are unsure if an incident can be deemed a form of misconduct, stay on the safe side, and report anyways. </p>
+
+                            <h5>Hazing</h5>
+                            <p>Any activity expected of someone in joining or participating in a group that humiliates, degrades, abuses, or endangers them regardless of a person's willingness to participate.</p>
+
+                            <h5>Sexual Misconduct</h5>
+                            <p>Encompasses a range of behaviors including sexual assault, sexual harassment, intimate partner violence, stalking, voyeurism, and any other conduct of a sexual nature that is not consensual.</p>
+
+                            <h5>Verbal Abuse</h5>
+                            <p>The use of derogatory language, insults, or demeaning statements to another person that can affect their self-esteem and lead to psychological harm.</p>
+
+                            <h5>Physical Abuse</h5>
+                            <p>Intentional use of physical force against another person that can result in harm to the body or physical pain.</p>
+
+                            <h5>Substance Abuse</h5>
+                            <p>The harmful or hazardous use of psychoactive substances, including alcohol and illicit drugs.</p>
+
+                            <h5>Discrimination</h5>
+                            <p>Unjust or prejudicial treatment of different categories of people, especially on the grounds of race, age, or gender.</p>
+                        </div>
+                        <div class="tab-pane fade" id="policies" role="tabpanel" aria-labelledby="laws-tab">
+                            <h2>UVA Policies</h2>
+
+                            <h5>Hazing</h5>
+                            <p>It shall be unlawful to haze so as to cause bodily injury, any student at any school, college, or university. Any person found guilty thereof shall be guilty of a Class 1 misdemeanor. Any person receiving bodily injury by hazing shall have a right to sue, civilly, the person or persons guilty thereof, whether adults or infants.</p>
+
+                            <h5>Sexual Misconduct</h5>
+                            <p>The University prohibits Sexual Harassment as defined by Title IX, which includes Quid Pro Quo Harassment, Sexual Harassment, Sexual Assault, Dating Violence, Domestic Violence, and Stalking on the basis of sex in an education program or activity (“Title IX Prohibited Conduct”) and other forms of sexual and gender-based misconduct, including Non-Consensual Sexual Contact, Non-Consensual Sexual Intercourse, Sexual Exploitation, Intimate Partner Violence, Stalking, Quid Pro Quo Harassment, Hostile Environment Harassment, Complicity in the commission of any act prohibited by this policy, and Retaliation against a person for the good faith reporting of any of these forms of conduct or participation in any investigation or proceeding under this policy (“Sexual or Gender-Based Prohibited Conduct”) (collectively, “Prohibited Conduct”).</p>
+
+                            <h5>Physical and Verbal Abuse</h5>
+                            <p>The University and Medical Center promote a safe environment in which to learn, live, and work by prohibiting threats or acts of violence. The University and Medical Center have established a Violence Prevention Committee and Threat Assessment Team (TAT) to assess, manage, intervene, and mitigate identified acts or threats of violence by or against faculty, staff, students, Medical Center employees, patients, and visitors or other non-affiliated individuals. Retaliation against any faculty, staff, student, Medical Center employee, patient, or visitor who in good faith, reports violent or threatening behavior per this policy is prohibited. Retaliatory actions will be referred to the appropriate disciplinary authority within the University and Medical Center.</p>
+
+                            <h5>Substance Abuse</h5>
+                            <p>The University of Virginia prohibits the illegal or otherwise irresponsible use of alcohol and other substances. It is the responsibility of every member of the University community to know the risks associated with substance use and misuse, as well as the relevant University policies and federal, state, and local laws, and to conduct themselves in accordance with these laws and policies.</p>
+
+                            <h5>Discrimination</h5>
+                            <p>The University's Preventing and Addressing Discrimination and Harassment (PADH) policy prohibits discrimination and harassment on the basis of age, color, race, disability, marital status, military status (including active duty service members, reserve service members, and dependents), national and ethnic origin, political affiliation, religion, sexual orientation, gender identity or expression, veteran status, family medical or genetic information, as well as other forms of sex discrimination not covered by the Policy on Sexual and Gender-Based Harassment and Other Forms of Interpersonal Violence.</p>
+
+                        </div>
+                        <div class="tab-pane fade" id="help" role="tabpanel" aria-labelledby="help-tab">
+                            <h2>Resources for Help</h2>
+
+                            <h5>Student Health General Medicine</h5>
+                            <h6>Committed to the health issues that are important to you, and strive to provide high-quality, accessible, inclusive care in a confidential and sensitive manner.</h6>
+                            <p>434-982-3915</p>
+
+                            <h5>The Women’s Center Counseling Staff and Confidential Advocate</h5>
+                            <h6>Offer our clients an empowerment-based counseling model through which we integrate evidence-based practice with a person-centered approach.</h6>
+                            <p>434-982-2252</p>
+
+                            <h5>WahooWell</h5>
+                            <h6>A positive, free, and confidential resource that helps empower students to enhance their well-being by exploring strengths and self-selected goals.</h6>
+                            <p>434-924-1509</p>
+
+                            <h5>Counseling and Psychological Services (CAPS)</h5>
+                            <h6>Provides assessment, counseling, medication management, and referral assistance for students seeking help with substance use/misuse concerns.</h6>
+                            <p>434-243-5150</p>
+
+                            <h5>Sexual Assault Resource Agency (SARA)</h5>
+                            <h6>A free, confidential, off-Grounds resource that serves anyone who has experienced or who cares for someone who has experienced sexual violence.</h6>
+                            <p>434-977-7273</p>
+
+                            <h5>Charlottesville Victim Witness Grant Program</h5>
+                            <h6>Designed to ensure that victims and witnesses of criminal offenses will receive fair and compassionate treatment throughout the judicial process.</h6>
+                            <p>804-786-4000</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p  style="color: #FFFFFF;">Class project. This system is not monitored, and no real information should be submitted.</p>
+            </div>
+        </div>
+    </body>
+{% endblock %}

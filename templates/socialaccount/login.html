@@ -1,0 +1,9 @@
+{% load socialaccount %}   <!-- Load the socialaccount template tags -->
+{% block content %}
+<h1>Sign In Via Google</h1>
+<p>You are about to sign in using a third-party account from Google.</p>
+<form method="post" action="{% provider_login_url 'google' process='login' %}">
+    {% csrf_token %}
+    <button type="submit">Continue with Google</button>
+</form>
+{% endblock %}

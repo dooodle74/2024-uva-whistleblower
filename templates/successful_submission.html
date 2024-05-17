@@ -1,0 +1,67 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+
+{% block title %}
+Submission Successful
+{% endblock %}
+
+{% block content %}
+<style>
+    .page-wrap {
+        min-height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+    }
+    .content-wrap {
+        flex: 1;
+    }
+    .footer {
+        height: 60px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #232D4B;;
+        text-align: center;
+        padding: 10px 0;
+        color: #FFFFFF;
+    }
+        .btn {
+        background-color: #232D4B;
+        color: white;
+        border: #2a3860;
+    }
+            .btn.btn-success.custom-hover:hover {
+        background-color: #2a3860;
+    }
+    .btn.btn-primary.custom-hover:hover {
+        background-color: #2a3860;
+    }
+</style>
+<html>
+    <body>
+ <div class="page-wrap">
+        <div class="content-wrap">
+            <div class="container mt-4">
+                <h1>
+                    You have successfully submitted a report.
+                </h1>
+                <p>You will be able to view status updates on your account.</p>
+                {% if request.user.is_authenticated %}
+                <form action="{% url 'view-my-submissions' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary custom-hover" style="background-color: #232D4B; border: #232D4B; color: white; ">Click Here to View My Submissions</button>
+                </form>
+                {% endif %}
+                <form action="{% url 'file_upload' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary custom-hover" style="background-color: #232D4B; border: #232D4B; color: white; ">Submit Another</button>
+                </form>
+            </div>
+        </div>
+             <div class="footer">
+                <p>Class project. This system is not monitored, and no real information should be submitted.</p>
+            </div>
+ </div>
+    </body>
+</html>
+{% endblock %}

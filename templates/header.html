@@ -1,0 +1,62 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+<!DOCTYPE html>
+<style>
+    .container-fluid {
+        margin:0;
+        padding: 0
+    }
+    .navbar-brand{
+        color: #FFFFFF;
+    }
+</style>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Header{% endblock %}</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #232D4B; padding-left: 80px; padding-right: 80px;">
+                        <div class="container-fluid">
+                            {% if user.is_authenticated %}
+                                {% if is_site_admin %}
+                                    <a class="navbar-brand" href="{% url 'login' %}">Home</a>
+                                    <a class="navbar-brand" href="{% url 'resources' %}">Resources</a>
+                                    <a class="navbar-brand" href="{% url 'public-submissions' %}">View Public Reports</a>
+                                    <a class="navbar-brand" href="{% url 'list-submissions' %}">View Submissions</a>
+                                    <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>
+                                {% else %}
+                                    <a class="navbar-brand" href="{% url 'login' %}">Home</a>
+                                    <a class="navbar-brand" href="{% url 'resources' %}">Resources</a>
+                                    <a class="navbar-brand" href="{% url 'file_upload' %}">Submit a Report</a>
+                                    <a class="navbar-brand" href="{% url 'public-submissions' %}">View Public Reports</a>
+                                    <a class="navbar-brand" href="{% url 'view-my-submissions' %}">My Submissions</a>
+                                    <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>
+                                {% endif %}
+                            {% else %}
+                                <a class="navbar-brand" href="{% url 'resources' %}">Resources</a>
+                                <a class="navbar-brand" href="{% url 'file_upload' %}">Submit a Report</a>
+                                <a class="navbar-brand" href="{% url 'public-submissions' %}">View Public Reports</a>
+                                <a class="navbar-brand" href="{% url 'login' %}">Login</a>
+                            {% endif %}
+                            
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+Report List
+{% endblock %}
+
+{% block content %}
+<style>
+.footer {
+        height: 60px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #232D4B;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 30px;
+    }
+    .page-wrap {
+        min-height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+    }
+    .content-wrap {
+        flex: 1;
+    }
+    .center-text {
+    text-align: center;
+    }
+
+.btn{
+  background-color: #232D4B;
+  color: white;
+  border: #2a3860;
+
+}
+.btn:hover {
+  background-color: #2a3860;
+}
+</style>
+<body>
+    <div class="page-wrap">
+        <div class="content-wrap">
+            <div class="container mt-4">
+                <h1>Public Submissions</h1>
+                <div class="row">
+                    {% for submission in submissions %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title" style="height: 45px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Report regarding {% for incident in submission.get_readable_incident_type %} {{incident}}
+                    {% if not forloop.last %}, {% endif %}{% endfor %} against {{ submission.get_organizations_involved_display }}</h5>
+                                <p>Upload Date: {{ submission.upload_time }}</p>
+                                {% if submission.status %}
+                                <p>Status: {{ submission.status }}</p>
+                                {% endif %}
+                                {% if submission.comment %}
+                                <p style="height: 25px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Comment: {{ submission.comment }}</p>
+                                {% else %}
+                                <p style="height: 25px; overflow: hidden;"></p>
+                                {% endif %}
+                                <div class="center-text"><a href="{% url 'view-submission' submission.id %}" class="btn btn-primary"  style="width: 100%;">View Submission</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No public submissions.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Class project. This system is not monitored, and no real information should be submitted.</p>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,164 @@
+{% extends 'header.html' %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+Report Form
+{% endblock %}
+
+{% block content %}
+<style>
+    .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #666;
+    text-align: center;
+    padding: 10px 0;
+    }
+    .required {
+        color: red;
+        font-size: 0.8em;
+    }
+    .btn {
+        background-color: #232D4B;
+        color: white;
+        border: #2a3860;
+    }
+        .btn.btn-success.custom-hover:hover {
+        background-color: #2a3860;
+    }
+    .btn.btn-primary.custom-hover:hover {
+        background-color: #2a3860;
+    }
+</style>
+<body>
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-16 col-md-15 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Report a Misconduct</h1>
+                        <form method="post" enctype="multipart/form-data" novalidate>
+                            {% csrf_token %}
+                            <fieldset class="mb-3">
+                                <div class="mb-3">
+                                    <legend>Type of Incident {% if not form.question_1.errors %} <span>*</span>{% endif %}</legend>
+                                    {% if form.question_1.errors %}
+                                       <div class="text-danger">
+                                        <strong>*</strong> Required
+                                        </div>
+                                    {% endif %}
+                                    {% for choice in form.question_1 %}
+                                    <div class="form-check">
+                                        {{ choice.tag }}
+                                        <label class="form-check-label" for="{{ choice.id_for_label }}">{{ choice.choice_label }}</label>
+                                    </div>
+                                    {% endfor %}
+                                <div id="question_1_other_info_container" style="display: none;">
+                                        {{ form.question_1_other }}
+                                </div>
+                                </div>
+                                <div class="mb-3">
+                                    <legend>Organizations Involved {% if not form.question_2.errors %} <span>*</span>{% endif %}</legend>
+                                    {% if form.question_2.errors %}
+                                        <div class="text-danger">
+                                            <strong>*</strong> Required
+                                        </div>
+                                    {% endif %}
+                                    {{ form.question_2 }}
+                                <div id="question_2_other_info_container" style="display: none;">
+                                        {{ form.question_2_other }}
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <legend>Who Was Involved</legend>
+                                    <p class="text-muted">{{ form.question_3.help_text }}</p>
+                                    <input class="form-control" type="text" name="{{ form.question_3.html_name }}" id="{{ form.question_3.id_for_label }}" required>{{ form.question_3.value|default_if_none:'' }}
+                                </div>
+                                <div class="mb-3">
+                                    <legend>Injuries/ Damages Inflicted</legend>
+                                    <p class="text-muted">{{ form.question_4.help_text }}</p>
+                                    <input class="form-control" type="text" name="{{ form.question_4.html_name }}" id="{{ form.question_4.id_for_label }}" required>{{ form.question_4.value|default_if_none:'' }}
+                                </div>
+                                <div class="mb-3">
+                                    <legend for="datetimepicker" class="form-label">Select Date and Time</legend>
+                                    {% if form.question_5.errors %}
+                                       <div class="text-danger">
+                                        <strong>*</strong> Error: Provided a future time
+                                        </div>
+                                    {% endif %}
+                                   {{ form.question_5 }}
+                                </div>
+                            <div class="mb-3">
+                                <legend>Explain the Incident {% if not form.additional_info.errors %} <span>*</span>
+                                {% endif %}
+                                </legend>
+                                {% if form.additional_info.errors %}
+                                    <div class="text-danger">
+                                        <strong>*</strong> Required
+                                    </div>
+                                {% endif %}
+                                <p class="text-muted">{{ form.additional_info.help_text }}</p>
+                                <textarea name="{{ form.additional_info.html_name }}" id="{{ form.additional_info.id_for_label }}" class="form-control full-width-textarea" required>{{ form.additional_info.value|default_if_none:'' }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <legend>Upload a File</legend>
+                                <label for="{{ form.file.id_for_label }}" class="form-label">{{ form.file.label }}</label>
+                                {{ form.file }}
+                                <a>Only .txt, .jpg, and .pdf files are allowed. </a>
+                            </div>
+                              <button type="submit" class="btn btn-primary custom-hover" style="background-color: #232D4B; border: #232D4B; color: white; ">Submit Report</button>
+                            </fieldset>
+                          
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<div class="footer">
+    <p>Class project. This system is not monitored, and no real information should be submitted.</p>
+</div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function toggleOtherInfoCheckbox(checkbox, containerId) {
+            var container = document.getElementById(containerId);
+            container.style.display = checkbox.checked ? 'block' : 'none';
+    }
+
+    function toggleOtherInfoSelect(select, containerId) {
+        var container = document.getElementById(containerId);
+        container.style.display = select.value === 'other' ? 'block' : 'none';
+    }
+
+    var otherCheckbox = document.querySelector('input[name="question_1"][value="other"]');
+    var otherSelect = document.getElementById('id_question_2');
+    var question1OtherContainer = 'question_1_other_info_container';
+    var question2OtherContainer = 'question_2_other_info_container';
+
+    if (otherCheckbox) {
+        otherCheckbox.addEventListener('change', function() {
+            toggleOtherInfoCheckbox(otherCheckbox, question1OtherContainer);
+        });
+        toggleOtherInfoCheckbox(otherCheckbox, question1OtherContainer);
+    }
+
+    if (otherSelect) {
+        otherSelect.addEventListener('change', function() {
+            toggleOtherInfoSelect(otherSelect, question2OtherContainer);
+        });
+        toggleOtherInfoSelect(otherSelect, question2OtherContainer);
+    }
+});
+</script>
+{% endblock %}
