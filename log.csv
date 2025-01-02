@@ -1,0 +1,427 @@
+Hash,Author,Date,Subject,Additions,Deletions
+1dff1d8,dooodle74,Sun,28 Apr 2024 22:35:45 -0400,should be working now,at least CI passes,1,1
+""
+24bb3d2,dooodle74,Sun,28 Apr 2024 22:31:38 -0400,some tests are failing in test.py but github CI works,1,1
+""
+f9767c9,dooodle74,Sun,28 Apr 2024 22:29:50 -0400,"Revert ""revert new image","recollecting static""",1,2
+""
+04eb8e5,dooodle74,Sun,28 Apr 2024 22:26:06 -0400,revert new image,recollecting static,2,1
+""
+17abf92,dooodle74,Sun,28 Apr 2024 22:21:41 -0400,"Revert ""collect new staticfile""",0,0
+""
+c8e7c47,dooodle74,Sun,28 Apr 2024 22:20:39 -0400,test static,0,0
+""
+04928a2,dooodle74,Sun,28 Apr 2024 22:19:13 -0400,"Revert ""collect new staticfile""",6,12
+""
+2148fc9,dooodle74,Sun,28 Apr 2024 22:16:16 -0400,collect new staticfile,12,6
+""
+f615679,dooodle74,Sun,28 Apr 2024 21:46:47 -0400,mix up roles,5,3
+""
+4bc3be4,dooodle74,Sun,28 Apr 2024 21:35:03 -0400,readme basics,19,9
+""
+cdc2873,CarlaTabet,Sun,28 Apr 2024 10:59:53 -0400,Fixed button redirecting to wrong page,1,1
+""
+67c6d48,Ridge R,Sun,28 Apr 2024 01:39:44 -0400,added home image citation,8,0
+""
+5d2733c,dooodle74,Fri,26 Apr 2024 16:11:06 -0400,html,better bg,better margins,no scroll-x,26,32
+""
+314ed90,dooodle74,Fri,26 Apr 2024 15:14:58 -0400,same with regular user,14,9
+""
+6cf2ba5,dooodle74,Fri,26 Apr 2024 15:12:59 -0400,Admin homepage css cleanup,center text,40,15
+""
+934c6bc,itskevinshi,Thu,25 Apr 2024 22:19:18 -0400,add test cases,62,3
+""
+e521f13,itskevinshi,Thu,25 Apr 2024 21:10:23 -0400,specify django allauth version,1,1
+""
+339e37c,itskevinshi,Thu,25 Apr 2024 21:04:09 -0400,remake staticfiles.json,0,1
+""
+4799eb9,itskevinshi,Thu,25 Apr 2024 20:46:50 -0400,revert to old misc.xml,3,0
+""
+f3a8f46,itskevinshi,Thu,25 Apr 2024 20:40:32 -0400,test ci,0,3
+""
+c8e0f39,Ridge R,Thu,25 Apr 2024 19:43:24 -0400,possibly determined whitenoise error,8,2
+""
+050446b,Ridge R,Thu,25 Apr 2024 19:12:38 -0400,changed back to whitenoise storage,8,5
+""
+8b2c083,Ridge R,Thu,25 Apr 2024 15:31:51 -0400,added whitenoise to requirements,1,0
+""
+79af9d7,ridgeredd,Thu,25 Apr 2024 14:14:11 -0400,added collect static to CI,3,0
+""
+46c0964,Ridge R,Thu,25 Apr 2024 13:57:50 -0400,changed static files to whitenoise,30670,1
+""
+0fb2e47,Ridge R,Thu,25 Apr 2024 12:09:41 -0400,fixed something,2,2
+""
+7f820c0,Ridge R,Thu,25 Apr 2024 12:07:21 -0400,ran collectstatic,30668,1
+""
+816cfd6,CarlaTabet,Wed,24 Apr 2024 18:57:10 -0400,Changed login page text,2,2
+""
+d84d597,CarlaTabet,Wed,24 Apr 2024 18:54:38 -0400,Minor change,1,1
+""
+8b707c5,CarlaTabet,Wed,24 Apr 2024 18:50:30 -0400,Edited visuals of confirmation page,15,11
+""
+c6b8de1,CarlaTabet,Wed,24 Apr 2024 18:47:28 -0400,Made textboxes wider in form,28,9
+""
+86cbf70,CarlaTabet,Wed,24 Apr 2024 18:29:04 -0400,Reformated public submission page,16,14
+""
+9b39a55,CarlaTabet,Wed,24 Apr 2024 18:09:34 -0400,Changed buttons in public submissions to be consistent with list submissions,11,1
+""
+2ee0c11,CarlaTabet,Wed,24 Apr 2024 17:54:58 -0400,Added welcome message for user page,7,5
+""
+0efd5c9,CarlaTabet,Wed,24 Apr 2024 17:48:45 -0400,Added welcome message for admin page,6,5
+""
+3874123,Ridge R,Wed,24 Apr 2024 02:05:33 -0400,it's all blue,18,5
+""
+456ed04,Ridge R,Wed,24 Apr 2024 01:44:21 -0400,made it look a lot nicer,178,65
+""
+9023dc1,dooodle74,Tue,23 Apr 2024 21:38:01 -0400,stach changes,2,0
+""
+2e65f99,CarlaTabet,Tue,23 Apr 2024 13:58:27 -0400,Preloaded comment,3,1
+""
+426adb0,CarlaTabet,Tue,23 Apr 2024 13:53:37 -0400,Finished updating submission detail view,15,5
+""
+f85c85b,CarlaTabet,Tue,23 Apr 2024 13:47:59 -0400,Edited comment to be a text field instead of small cahracter field:,32,7
+""
+a98a7aa,CarlaTabet,Tue,23 Apr 2024 13:31:17 -0400,Implemented a feature to contact student,30,0
+""
+1e5ad67,CarlaTabet,Tue,23 Apr 2024 13:17:47 -0400,implemented grid view for viewing submission details,87,29
+""
+b54cf9e,CarlaTabet,Tue,23 Apr 2024 10:51:33 -0400,Changed welcome message,14,16
+""
+6a8b3ce,CarlaTabet,Tue,23 Apr 2024 10:48:19 -0400,Changed welcome message,7,27
+""
+11f1b6d,CarlaTabet,Tue,23 Apr 2024 10:31:50 -0400,Standardized width of my submissions table,18,0
+""
+c25d279,CarlaTabet,Tue,23 Apr 2024 10:30:25 -0400,Standardized width of submissions table,19,0
+""
+0106cc4,CarlaTabet,Tue,23 Apr 2024 10:22:15 -0400,Removed buttons from home page,2,12
+""
+8531b7c,CarlaTabet,Tue,23 Apr 2024 10:15:32 -0400,Changed icons,1,1
+""
+f3561e7,CarlaTabet,Tue,23 Apr 2024 10:10:56 -0400,added icons for public vs. private,10,1
+""
+d3e0e9a,CarlaTabet,Tue,23 Apr 2024 10:01:23 -0400,Added filtering based on public vs. private for admins,23,9
+""
+b012ff4,CarlaTabet,Mon,22 Apr 2024 21:48:22 -0400,Added sorting in user submissions,18,11
+""
+ca72b4b,CarlaTabet,Mon,22 Apr 2024 20:00:14 -0400,Added button for new submission,8,5
+""
+c12934c,CarlaTabet,Mon,22 Apr 2024 19:57:53 -0400,Added filtering to user viewing submissions,52,28
+""
+9bf9bd6,CarlaTabet,Mon,22 Apr 2024 17:12:37 -0400,Formated List of Submissions into tabular form and added filtering for admins based on status,52,24
+""
+06e0524,CarlaTabet,Mon,22 Apr 2024 16:52:18 -0400,Limited widget to current date and added error for future time,24,6
+""
+d4e2bc6,CarlaTabet,Mon,22 Apr 2024 16:30:45 -0400,Added a button to submit new report if no previous submissions,4,0
+""
+bed4348,CarlaTabet,Mon,22 Apr 2024 16:24:33 -0400,Added a popup asking to verify deleting a submission,22,4
+""
+d7772ab,CarlaTabet,Mon,22 Apr 2024 16:02:40 -0400,Changed header to span whole page,4,4
+""
+a5050ae,CarlaTabet,Mon,22 Apr 2024 15:42:14 -0400,Added more resources,8,1
+""
+4a3867e,CarlaTabet,Mon,22 Apr 2024 15:34:10 -0400,Fixed bug of users being able to change status to in progress,1,2
+""
+6b61fda,CarlaTabet,Mon,22 Apr 2024 15:31:42 -0400,Changed wording of Publicity Status,1,1
+""
+642ff96,CarlaTabet,Mon,22 Apr 2024 15:21:45 -0400,Added an 'other' option to the form,58,3
+""
+6c87ede,CarlaTabet,Mon,22 Apr 2024 14:56:29 -0400,Made it clear what submission elements are mandatory,27,10
+""
+9621f9d,itskevinshi,Sun,14 Apr 2024 20:14:06 -0400,fix small bug,3,1
+""
+a528905,CarlaTabet,Sun,14 Apr 2024 20:08:47 -0400,removed unecessary import statement,0,4
+""
+4b68dc0,CarlaTabet,Sun,14 Apr 2024 20:01:47 -0400,Edited requirements,1,0
+""
+bec2ab5,CarlaTabet,Sun,14 Apr 2024 20:01:24 -0400,Implemented print feature,74,3
+""
+457b3e7,CarlaTabet,Sun,14 Apr 2024 19:43:32 -0400,Merged,3,0
+""
+916da78,Ridge R,Sun,14 Apr 2024 01:36:16 -0400,adjusted styling,28,8
+""
+0ecad22,Ridge R,Sun,14 Apr 2024 01:05:36 -0400,standardized heights in public reports,3,3
+""
+9242b85,Ridge R,Sun,14 Apr 2024 00:55:53 -0400,made it display the type of incident,7,2
+""
+c99a0d6,Ridge R,Sun,14 Apr 2024 00:21:24 -0400,fixed users going back to submissions,12,4
+""
+357de4f,Ridge R,Sat,13 Apr 2024 23:18:15 -0400,added ability for site admins to make reports public,14,4
+""
+771dea2,Ridge R,Sat,13 Apr 2024 23:02:38 -0400,added page to see public reports,103,2
+""
+0a89892,itskevinshi,Fri,12 Apr 2024 22:51:55 -0400,add relevant titles to tabs,123,73
+""
+01afd9d,itskevinshi,Fri,12 Apr 2024 21:53:43 -0400,change from sticky to regular footer,382,324
+""
+4c4f0ec,dooodle74,Fri,12 Apr 2024 21:39:24 -0400,nothing changed,1,1
+""
+0bce740,dooodle74,Fri,12 Apr 2024 21:36:57 -0400,multiple file arrayfield,1,1
+""
+9529714,Ridge R,Fri,12 Apr 2024 17:01:27 -0400,sorted visible submissions by most recent first,2,2
+""
+cb42e83,Ridge R,Fri,12 Apr 2024 16:57:11 -0400,allowed users to delete their own submissions,22,8
+""
+7c6259b,CarlaTabet,Fri,12 Apr 2024 15:23:57 -0400,Customized header based on who is logged in,31,3
+""
+bde6e12,CarlaTabet,Fri,12 Apr 2024 13:35:31 -0400,Changed title,8,9
+""
+3e7e921,CarlaTabet,Fri,12 Apr 2024 13:34:19 -0400,Filled in UVA Policies and Resources for help,37,2
+""
+1965111,CarlaTabet,Fri,12 Apr 2024 13:16:35 -0400,Filled out types of misconduct page under resources,26,4
+""
+30e269f,CarlaTabet,Fri,12 Apr 2024 13:00:04 -0400,Added nav tabs to resources page,27,4
+""
+39e2ad1,CarlaTabet,Thu,11 Apr 2024 12:37:34 -0400,Added button to view status in succesful_submission,5,0
+""
+3c96b77,CarlaTabet,Thu,11 Apr 2024 12:31:58 -0400,Removed duplicate disclaimer on login page,0,3
+""
+21636f1,CarlaTabet,Thu,11 Apr 2024 12:30:56 -0400,Removed submit form option for admins,0,4
+""
+a0fe2cb,CarlaTabet,Thu,11 Apr 2024 12:28:10 -0400,Added resources to views and urls,9,3
+""
+b316a6f,CarlaTabet,Thu,11 Apr 2024 10:34:41 -0400,Created a resources.html file,43,1
+""
+ac34293,itskevinshi,Fri,5 Apr 2024 23:36:40 -0400,edit footer,9,12
+""
+a12d32d,itskevinshi,Fri,5 Apr 2024 23:30:32 -0400,format html,331,389
+""
+0bf717e,itskevinshi,Fri,5 Apr 2024 23:27:17 -0400,unused css,170,16
+""
+393080d,itskevinshi,Fri,5 Apr 2024 23:26:18 -0400,footer implementation,13,0
+""
+790a126,dooodle74,Fri,5 Apr 2024 11:37:11 -0400,integrated file,12,1
+""
+6bdaaf0,dooodle74,Sun,31 Mar 2024 11:12:46 -0400,back button etc,6,0
+""
+06b3773,dooodle74,Sun,31 Mar 2024 11:01:54 -0400,auto change status,display time,6,0
+""
+48d134d,Ridge R,Sun,31 Mar 2024 00:47:55 -0400,changed which elements of the submission form are required,6,6
+""
+e328209,Ridge R,Sat,30 Mar 2024 21:11:49 -0400,fixed file view,16,1
+""
+6dcb751,itskevinshi,Sat,30 Mar 2024 20:48:55 -0400,change not completed to new in list of submissions page,6,5
+""
+956e982,Ridge R,Sat,30 Mar 2024 20:40:05 -0400,rebroke formatting issue and refixed it lol,22,22
+""
+21de2ca,Ridge R,Sat,30 Mar 2024 20:33:29 -0400,fixed formatting issue in html,6,6
+""
+4507a1d,Ridge R,Sat,30 Mar 2024 20:28:08 -0400,debugging,18,18
+""
+216c104,Ridge R,Sat,30 Mar 2024 19:59:18 -0400,made comments only show if there was one,5,1
+""
+99f1d21,itskevinshi,Sat,30 Mar 2024 19:58:05 -0400,fix bug with submit i think,2,5
+""
+de07bd4,Ridge R,Sat,30 Mar 2024 19:44:56 -0400,debugged admin view not showing,1,1
+""
+9fab863,Ridge R,Sat,30 Mar 2024 19:31:13 -0400,users now able to see only their uploaded files,16,2
+""
+2845365,Ridge R,Sat,30 Mar 2024 19:08:56 -0400,got a working list of user's previous submissions working,43,1
+""
+bb4c49d,dooodle74,Sat,30 Mar 2024 16:25:02 -0400,list files redirect,1,1
+""
+505a461,dooodle74,Sat,30 Mar 2024 16:20:53 -0400,view current status,preload previous status,22,23
+""
+6c44664,dooodle74,Sat,30 Mar 2024 16:08:14 -0400,chnage homepage,1,1
+""
+d96fd3b,dooodle74,Sat,30 Mar 2024 16:01:34 -0400,list files again?,1,1
+""
+abfe1af,dooodle74,Sat,30 Mar 2024 15:53:12 -0400,forms,9,2
+""
+6ebeb8f,dooodle74,Sat,30 Mar 2024 15:43:19 -0400,admin form in right place,14,2
+""
+ce090b9,dooodle74,Sat,30 Mar 2024 15:32:16 -0400,"Revert ""admin form""",9,38
+""
+0130be1,dooodle74,Sat,30 Mar 2024 15:31:44 -0400,"Revert ""Changed button to view uploaded forms""",1,1
+""
+1fb6f17,dooodle74,Sat,30 Mar 2024 14:56:11 -0400,admin form,38,9
+""
+c7880fd,CarlaTabet,Sat,30 Mar 2024 12:44:33 -0400,Changed button to view uploaded forms,1,1
+""
+b2b9b55,CarlaTabet,Sat,30 Mar 2024 12:43:38 -0400,Made incidents readable,13,3
+""
+8b5ede8,CarlaTabet,Sat,30 Mar 2024 12:39:10 -0400,Created new views to view forms not just files,99,4
+""
+a2eb77f,CarlaTabet,Sat,30 Mar 2024 12:15:36 -0400,Added fields to file model,102,10
+""
+43617c9,CarlaTabet,Sat,30 Mar 2024 11:52:24 -0400,Changed layout of form,24,15
+""
+a8b7b7b,CarlaTabet,Sat,30 Mar 2024 11:46:13 -0400,Added one more question to form,67,43
+""
+6a58744,CarlaTabet,Sat,30 Mar 2024 11:39:06 -0400,Added a date/time picker,12,5
+""
+5ad6a24,CarlaTabet,Sat,30 Mar 2024 11:31:26 -0400,Added 3 more questions to the form,25,0
+""
+10fcf2a,CarlaTabet,Fri,29 Mar 2024 18:18:04 -0400,Edited views for viewing files,82,13
+""
+7d8e759,CarlaTabet,Fri,29 Mar 2024 17:04:32 -0400,Changed UploadedFile model to have more information,7,2
+""
+195e7b1,dooodle74,Tue,26 Mar 2024 12:44:01 -0400,index view,1,1
+""
+6888b34,dooodle74,Mon,25 Mar 2024 23:49:09 -0400,test superser,1,1
+""
+c1dce06,dooodle74,Mon,25 Mar 2024 23:38:31 -0400,Revert agian,2,2
+""
+b7790e6,dooodle74,Mon,25 Mar 2024 23:36:56 -0400,revert,2,2
+""
+c9c7c70,dooodle74,Mon,25 Mar 2024 23:34:34 -0400,/url,7,7
+""
+9b3bcbb,dooodle74,Mon,25 Mar 2024 22:58:18 -0400,.,1,1
+""
+5ad172e,dooodle74,Mon,25 Mar 2024 22:29:47 -0400,delete codes,0,3
+""
+3e95da1,dooodle74,Mon,25 Mar 2024 22:28:56 -0400,env instead of txt,0,3
+""
+409655c,CarlaTabet,Fri,22 Mar 2024 11:35:45 -0400,Update requirements.txt,2,1
+""
+f00280e,CarlaTabet,Fri,22 Mar 2024 11:27:51 -0400,Began html of form,13,14
+""
+feaf350,CarlaTabet,Fri,22 Mar 2024 11:20:16 -0400,Edited html of form,24,1
+""
+e694638,CarlaTabet,Fri,22 Mar 2024 11:14:24 -0400,Added a question 1 for form,17,1
+""
+82b591c,CarlaTabet,Fri,15 Mar 2024 17:31:58 -0400,Removed unnecessary buttons,1,4
+""
+7d165ee,CarlaTabet,Fri,15 Mar 2024 17:31:20 -0400,Styled login page,68,8
+""
+e4af15d,CarlaTabet,Fri,15 Mar 2024 17:19:01 -0400,Moved logout button to header,4,8
+""
+e0127d6,CarlaTabet,Fri,15 Mar 2024 17:15:51 -0400,Added some styling for admin and user pages,49,25
+""
+1a2cbcb,CarlaTabet,Fri,15 Mar 2024 17:10:18 -0400,Created header.html,74,11
+""
+6410353,Kevin Shi,Mon,11 Mar 2024 20:53:23 -0400,Update django.yml,2,2
+""
+b3a0f4b,itskevinshi,Mon,11 Mar 2024 20:50:25 -0400,add test cases,39,5
+""
+b46847f,Kevin Shi,Mon,11 Mar 2024 20:49:22 -0400,Update django.yml,2,2
+""
+8a32f2f,itskevinshi,Mon,11 Mar 2024 19:19:47 -0400,initial commit,16,2
+""
+1bd56b3,CarlaTabet,Mon,11 Mar 2024 14:46:38 -0400,Made link into button,5,1
+""
+9c64b51,CarlaTabet,Mon,11 Mar 2024 14:44:31 -0400,Removed unnecessary file,0,20
+""
+a123e8f,CarlaTabet,Mon,11 Mar 2024 14:40:46 -0400,Added a Home button for uploaded files page,4,0
+""
+e9fce00,CarlaTabet,Mon,11 Mar 2024 14:38:48 -0400,Made file name the link,3,3
+""
+ada973a,CarlaTabet,Mon,11 Mar 2024 14:34:25 -0400,Can now view files,24,2
+""
+c2e0309,CarlaTabet,Mon,11 Mar 2024 12:58:20 -0400,Now showing links of files,13,26
+""
+991f8fc,CarlaTabet,Mon,11 Mar 2024 12:23:47 -0400,View switches,12,3
+""
+168592d,CarlaTabet,Mon,11 Mar 2024 12:20:34 -0400,Added new view for listing files,32,3
+""
+18646d5,Ridge R,Sat,9 Mar 2024 01:29:05 -0500,persisted uploaded files in s3 database,54,2
+""
+94071b1,Ridge R,Fri,8 Mar 2024 23:02:39 -0500,limited acceptable file submissions to pdfs,txts,and jpgs,10,1
+""
+0f3114f,Ridge R,Fri,8 Mar 2024 21:31:11 -0500,added form submission and submission confirmation pages,73,1
+""
+24b3f7b,CarlaTabet,Sat,24 Feb 2024 08:11:27 -0500,Changed login interfce,10,0
+""
+0548b0d,CarlaTabet,Sat,24 Feb 2024 08:07:27 -0500,Changed login view,12,4
+""
+4096e96,CarlaTabet,Fri,23 Feb 2024 16:28:05 -0500,Changed spelling to Site Admins,1,1
+""
+8fcfc70,CarlaTabet,Fri,23 Feb 2024 16:26:48 -0500,Checking if User is Site Admin,1,1
+""
+cafdc68,CarlaTabet,Fri,23 Feb 2024 16:25:51 -0500,Deleted signals.py,2,14
+""
+05a0a2d,CarlaTabet,Fri,23 Feb 2024 16:23:49 -0500,Removed hardcoded ADMIN_USERS in settings.py,0,8
+""
+c7a010b,CarlaTabet,Fri,23 Feb 2024 15:31:10 -0500,updated branch with main,1,1
+""
+e3a1f96,CarlaTabet,Fri,23 Feb 2024 15:20:15 -0500,Forcing google login to ask what account,1,0
+""
+e835a65,dooodle74,Fri,23 Feb 2024 15:11:11 -0500,rename allauth module in requirements txt,2,1
+""
+6e231f3,CarlaTabet,Fri,23 Feb 2024 15:07:47 -0500,Can now log out,12,3
+""
+f9196bf,CarlaTabet,Fri,23 Feb 2024 15:06:45 -0500,Added option to logout in both views,2,0
+""
+382362c,CarlaTabet,Fri,23 Feb 2024 15:05:53 -0500,Edited admin_user.html,18,4
+""
+4105417,CarlaTabet,Fri,23 Feb 2024 15:02:20 -0500,Edited index.html to have separate view for admins,8,4
+""
+059cc8d,CarlaTabet,Fri,23 Feb 2024 14:53:14 -0500,Edited settings to have 'oauth_app.apps.OauthAppConfig',4,0
+""
+ff75bad,CarlaTabet,Fri,23 Feb 2024 14:51:51 -0500,Added signals.py,11,2
+""
+33885ad,CarlaTabet,Fri,23 Feb 2024 14:51:22 -0500,Renamed index 2.html to be user.html,2,0
+""
+a18b871,CarlaTabet,Fri,23 Feb 2024 14:44:04 -0500,Edited admin_user.html,11,0
+""
+c75235f,dooodle74,Fri,23 Feb 2024 14:39:40 -0500,revert allauth,1,2
+""
+35ac54c,dooodle74,Fri,23 Feb 2024 14:38:07 -0500,see above. new allauth in req txt. Also change time zone to NY,3,2
+""
+57957aa,CarlaTabet,Fri,23 Feb 2024 14:37:43 -0500,Added ADMIN_USERS to settings.py,9,10
+""
+7c1d125,dooodle74,Fri,23 Feb 2024 14:31:32 -0500,comment some lines in requirements.txt - most aren't used at the moment and is causing problems with github workflow,29,25
+""
+d7bb31e,dooodle74,Fri,23 Feb 2024 14:27:31 -0500,Create django.yml,30,0
+""
+c9df3a4,CarlaTabet,Fri,23 Feb 2024 14:20:16 -0500,Made html file for admin_users,125,1
+""
+11f67ee,dooodle74,Fri,23 Feb 2024 13:34:02 -0500,allowed hosts,heroku had error,1,1
+""
+5e20cb8,dooodle74,Fri,23 Feb 2024 13:31:21 -0500,allowed hosts,heroku key,resetup admin,6,3
+""
+e6e8770,dooodle74,Fri,23 Feb 2024 13:17:40 -0500,postgres database setup,4,8
+""
+9331db0,itskevinshi,Fri,23 Feb 2024 10:17:11 -0500,revert,1,1
+""
+22bc52f,itskevinshi,Fri,23 Feb 2024 10:15:48 -0500,test fix settings.py,2,2
+""
+9b93cdb,itskevinshi,Fri,23 Feb 2024 10:11:24 -0500,update procfile,2,1
+""
+a5ab9f2,itskevinshi,Thu,22 Feb 2024 19:59:35 -0500,update allowed hosts,1,1
+""
+2424771,itskevinshi,Thu,22 Feb 2024 19:35:30 -0500,add heroku as allowed host,1,1
+""
+f250587,itskevinshi,Thu,22 Feb 2024 19:32:52 -0500,fix requirements,25,0
+""
+ca97bd1,itskevinshi,Thu,22 Feb 2024 19:25:39 -0500,update settings and requirement,10,2
+""
+eaf477e,itskevinshi,Thu,22 Feb 2024 18:57:32 -0500,edit procfile,1,1
+""
+8627d88,itskevinshi,Thu,22 Feb 2024 18:50:39 -0500,add requirement.txt and procfile,81,0
+""
+6e92bb3,dooodle74,Wed,21 Feb 2024 21:24:43 -0500,merge done,5,1
+""
+ba4bf60,dooodle74,Wed,21 Feb 2024 20:53:21 -0500,seperated url files,grouped templates,0,13
+""
+51c4855,dooodle74,Wed,21 Feb 2024 20:50:47 -0500,merged,0,22
+""
+a906fbf,dooodle74,Wed,21 Feb 2024 20:45:48 -0500,rolling back,50,9
+""
+f306426,dooodle74,Wed,21 Feb 2024 18:12:30 -0500,folder refactoring,1,1
+""
+136553a,dooodle74,Wed,21 Feb 2024 16:25:42 -0500,google login socials setup. Finished User Registration in Django using Google OAuth,58,75
+""
+74c515e,dooodle74,Tue,20 Feb 2024 18:54:23 -0500,"Revert ""created superuser 01""",23,54
+""
+11be80e,dooodle74,Tue,20 Feb 2024 18:54:21 -0500,other method fails,42,0
+""
+bda72c0,dooodle74,Tue,20 Feb 2024 18:14:15 -0500,created superuser 01,54,23
+""
+73b430a,dooodle74,Tue,20 Feb 2024 15:17:23 -0500,users model,once again remodel,44,31
+""
+aaa39da,dooodle74,Tue,20 Feb 2024 14:48:49 -0500,step 2 of User Registration in Django using Google OAuth,28,0
+""
+214487b,dooodle74,Tue,20 Feb 2024 14:46:01 -0500,see above,1,634
+""
+b74ddd4,dooodle74,Tue,20 Feb 2024 14:36:19 -0500,redoing django setup - previous version had weird folders,19,19
+""
+47eeb43,dooodle74,Tue,20 Feb 2024 14:13:57 -0500,refactor folders,0,0
+""
+00376b5,dooodle74,Tue,20 Feb 2024 11:43:22 -0500,readme members,640,5
+""
+fd0fea4,dooodle74,Tue,20 Feb 2024 11:24:38 -0500,Inital setup. Activate django project. Virtual environment located in /app-environment/; app located in /b09app/,200,0
+""
+4d3c571,github-classroom[bot],Fri,2 Feb 2024 23:03:53 +0000,add deadline,1,0
+""
+0b90f9d,github-classroom[bot],Fri,2 Feb 2024 23:03:51 +0000,Initial commit,143,0
+""
